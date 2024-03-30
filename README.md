@@ -66,13 +66,80 @@
 
 <h4>Endpoints</h4>
 
-<!-- Sales Controller endpoints -->
+<ul>
+  <li><strong>Get Weapons and Armors</strong></li>
+  <ul>
+    <li><strong>URL:</strong> /api/sales/weapons-and-armors</li>
+    <li><strong>HTTP Method:</strong> GET</li>
+    <li><strong>Description:</strong> Returns available weapons and armors for sale.</li>
+    <li><strong>Response:</strong> Returns a list of ProductDTO objects.</li>
+  </ul>
+
+  <li><strong>Get Raw Materials</strong></li>
+  <ul>
+    <li><strong>URL:</strong> /api/sales/raw-materials</li>
+    <li><strong>HTTP Method:</strong> GET</li>
+    <li><strong>Description:</strong> Returns available raw materials for sale.</li>
+    <li><strong>Response:</strong> Returns a list of ProductDTO objects.</li>
+  </ul>
+
+  <li><strong>Get Warehouses by Product ID</strong></li>
+  <ul>
+    <li><strong>URL:</strong> /api/sales/warehouses/{productId}/owner</li>
+    <li><strong>HTTP Method:</strong> GET</li>
+    <li><strong>Description:</strong> Returns warehouses owning a specific product.</li>
+    <li><strong>Path Parameters:</strong> {productId} (Integer)</li>
+    <li><strong>Response:</strong> Returns a list of WarehouseDTO objects.</li>
+  </ul>
+
+  <li><strong>Increase Stock</strong></li>
+  <ul>
+    <li><strong>URL:</strong> /api/sales/increase-stock/{quantityToAddClient}/{productIdClient}/{clientId}/{quantityToAddWarehouse}/{productIdWarehouse}</li>
+    <li><strong>HTTP Method:</strong> GET</li>
+    <li><strong>Description:</strong> Increases the stock of a product for both the client and the warehouse.</li>
+    <li><strong>Path Parameters:</strong> {quantityToAddClient} (Integer), {productIdClient} (Integer), {clientId} (Integer), {quantityToAddWarehouse} (Integer), {productIdWarehouse} (Integer)</li>
+    <li><strong>Response:</strong> Returns a message indicating the success or failure of the operation.</li>
+  </ul>
+</ul>
 
 <h3>Warehouse Controller</h3>
 <p>The WarehouseController handles operations related to product warehouse.</p>
 
 <h4>Endpoints</h4>
 
-<!-- Warehouse Controller endpoints -->
+<ul>
+  <li><strong>Get Weapons and Armors</strong></li>
+  <ul>
+    <li><strong>URL:</strong> /warehouse/weapons-and-armors</li>
+    <li><strong>HTTP Method:</strong> GET</li>
+    <li><strong>Description:</strong> Returns available weapons and armors in the warehouse.</li>
+    <li><strong>Response:</strong> Returns a list of ProductDTO objects.</li>
+  </ul>
+
+  <li><strong>Get Raw Materials</strong></li>
+  <ul>
+    <li><strong>URL:</strong> /warehouse/raw-materials</li>
+    <li><strong>HTTP Method:</strong> GET</li>
+    <li><strong>Description:</strong> Returns available raw materials in the warehouse.</li>
+    <li><strong>Response:</strong> Returns a list of ProductDTO objects.</li>
+  </ul>
+
+  <li><strong>Get Products by Product ID</strong></li>
+  <ul>
+    <li><strong>URL:</strong> /warehouse/products</li>
+    <li><strong>HTTP Method:</strong> GET</li>
+    <li><strong>Description:</strong> Returns stored products by their product ID.</li>
+    <li><strong>Response:</strong> Returns a list of WarehouseDTO objects.</li>
+  </ul>
+
+  <li><strong>Increase Stock by Product ID</strong></li>
+  <ul>
+    <li><strong>URL:</strong> /warehouse/increase-stock/{quantityToAdd}/{productId}</li>
+    <li><strong>HTTP Method:</strong> POST</li>
+    <li><strong>Description:</strong> Increases the stock of a product in the warehouse.</li>
+    <li><strong>Path Parameters:</strong> {quantityToAdd} (Integer), {productId} (Integer)</li>
+    <li><strong>Response:</strong> Returns an HTTP status code indicating the success or failure of the operation.</li>
+  </ul>
+</ul>
 
 </html>
